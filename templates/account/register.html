@@ -1,0 +1,21 @@
+{% extends "pages/base.html" %}
+
+{% block main %}
+
+<section class="register">
+    <div class="container">
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {% for fm in form %}
+                {{fm.label_tag}}
+                {{fm}}
+                {{fm.errors}}
+               <br>
+               <br>
+            {% endfor %}
+            <input type="submit" value="Submit">
+        </form>
+      </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "pages/base.html" %}
+
+{% block main %}
+
+     <section class="register">
+        <div class="container">
+        <h1 class="heading-primary">Sign in</h1>
+            <form action="" method="post" novalidate class="register-form">
+                {% csrf_token %}
+                {% for fm in form %}
+                    {{fm.label_tag}}
+                    {{fm}}
+                    {{fm.errors}}
+                   <br>
+                   <br>
+                {% endfor %}
+                <input type="submit" value="Sign in">
+            </form>
+          </div>
+      </section>
+
+{% endblock %}
